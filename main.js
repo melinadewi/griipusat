@@ -1,4 +1,4 @@
-const serverUrl = 'http://grii-pusat.project.halamanku.id/api';
+const serverUrl = 'https://grii-pusat.project.halamanku.id/api';
 $(document).ready(function(){
     $('.to-home').on('click', function(event){
       event.preventDefault()
