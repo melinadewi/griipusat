@@ -1,5 +1,6 @@
-const serverUrl = 'https://grii-pusat.project.halamanku.id/api';
+const serverUrl = 'https://grii-pusat.project.halamanku.id';
 $(document).ready(function(){
+  toHome()
     $('.to-home').on('click', function(event){
       event.preventDefault()
       console.log("To Home Page")
@@ -176,21 +177,9 @@ $(document).ready(function(){
         </div>
       `)
     })
-
-    // $('.to-stephen-tong').on('click', function(event){
-    //   event.preventDefault()
-    //   console.log("To Gerakan Page")
-    //   $('#content').empty()
-    //   $('#content').append(`
-    //     <div id="stephen-tong" class="card-body" style="padding: 5vh; overflow-y: scroll;">
-        
-    //     </div>
-    //   `)
-    // })
 })
 
 function toHome(){
-  getBanner()
   $('#content').empty()
   $('#content').append(`
   <div id="home" class="home d-flex justify-content-around" style="margin-top: 5vh; height: 80vh;">
@@ -208,21 +197,9 @@ function toHome(){
     </div>
     <div style="margin-left: 2.5vw; margin-right: 2.5vw;">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width:30vw; display: flex; flex-direction: column-reverse;">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <ol class="carousel-indicators" id="indicators">
         </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <background-image class="d-block w-100 backgroundCarousel" style="background: transparent url('./img/31augConcert.dc1ce97e.jpg') no-repeat scroll center center;">
-          </div>
-          <div class="carousel-item">
-            <background-image class="d-block w-100 backgroundCarousel" style="background: transparent url('./img/24augConcert.282feaca.jpg') no-repeat scroll center center;">
-          </div>
-          <div class="carousel-item">
-            <background-image class="d-block w-100 backgroundCarousel" style="background: transparent url('./img/GaleriaSophilia.jpeg') no-repeat scroll center center;">
-          </div>
+        <div class="carousel-inner" id="banners">
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -268,6 +245,7 @@ function toHome(){
     </div>
   </div>
   `)
+  getBanner()
 }
 
 function toGerakan(){  
@@ -330,31 +308,33 @@ function toPengakuan(){
 function getBanner() {
   $.ajax({
       method: "GET",
-      url: `${serverUrl}/getBannerList`
+      url: `${serverUrl}/api/getBannerList`
   })
-      .done(banners => {
-        console.log(banners)
-        for(let i = 0; i < banners.length; i++){
-          if(i === 0){
+      .done(completeBanners => {
+        const banners = completeBanners.Message
+        $.each(banners, function(i){
+          if(i === 0){  
+            $('#banners').empty()
             $('#banners').append(`
               <div class="carousel-item active">
-                <background-image class="d-block w-100 backgroundCarousel" style="background-image: url('${serverUrl}/${banners[i].bannerLocation}');">
+                <background-image class="d-block w-100 backgroundCarousel" style="background-image: url('${serverUrl}/public/${banners[i].bannerLocation}');">
               </div>
             `)
+            $('#indicators').empty()
             $('#indicators').append(`
               <li data-target="#carouselExampleIndicators" data-slide-to="${i}" class="active"></li>
             `)
-          } else if(banners[i].status){
+          } else {
             $('#banners').append(`
               <div class="carousel-item">
-                <background-image class="d-block w-100 backgroundCarousel" style="background-image: url('${serverUrl}/${banners[i].bannerLocation}');">
+                <background-image class="d-block w-100 backgroundCarousel" style="background-image: url('${serverUrl}/public/${banners[i].bannerLocation}');">
               </div>
             `)
             $('#indicators').append(`
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="${i}"></li>
             `)
           }
-        }
+        });
       })
       .fail(err=> {
           console.log(err)
