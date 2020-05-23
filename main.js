@@ -1,5 +1,4 @@
-const serverUrl = 'https://grii-pusat.project.halamanku.id';
-const serverBulletin = 'https://grii-pusat.dev.kentgi.net'
+const serverUrl = 'https://grii-pusat.dev.kentgi.net';
 $(document).ready(function(){
   toHome()
     $('.to-home').on('click', function(event){
@@ -369,7 +368,7 @@ function getBanner() {
 function getBulletin() {
   $.ajax({
       method: "GET",
-      url: `${serverBulletin}/api/getWartaList`
+      url: `${serverUrl}/api/getWartaList`
   })
       .done(completeBulletins => {
         const bulletins = completeBulletins.Message
