@@ -1,4 +1,5 @@
 const serverUrl = 'https://grii-pusat.project.halamanku.id';
+const serverBulletin = 'https://grii-pusat.dev.kentgi.net'
 $(document).ready(function(){
   toHome()
     $('.to-home').on('click', function(event){
@@ -183,7 +184,7 @@ function toHome(){
   $('#content').empty()
   $('#content').append(`
   <div id="home" class="home d-flex justify-content-around" style="margin-top: 5vh; height: 80vh;">
-    <div class="leftTab d-flex justify-content" style="width: 25vw; margin-bottom: 20px; flex-direction: column; margin-left: 5vw; margin-right: 2.5vw;">
+    <div class="leftTab d-flex justify-content" id="percobaanWarta" style="width: 25vw; margin-bottom: 20px; flex-direction: column; margin-left: 5vw; margin-right: 2.5vw;">
       <span class="subTitle">15 SEPTEMBER 2019</span>
       <span class="serviceTitle">Kebaktian Mandarin (07.30 WIB)</span>
       <span class="serviceSpeaker"><strong>PDT. DR. STEPHEN TONG</strong></span>
@@ -193,6 +194,8 @@ function toHome(){
       <span class="serviceSpeaker"><strong>REV. MICHAEL DENSMOOR</strong></span>
       <span class="serviceTitle">Kebaktian Sore (16.30 WIB)</span>
       <span class="serviceSpeaker"><strong>PDT. IVAN KRISTIONO</strong></span>
+      <br>
+      <span class="subTitle">Tambahan 23 MEI 2020</span>
       <br>
     </div>
     <div style="margin-left: 2.5vw; margin-right: 2.5vw;">
@@ -215,30 +218,48 @@ function toHome(){
       <ul class="nav" style="flex-direction: column; width:100%;">
         <span class="submenuTitle">SubMenu Title 1</span>
         <li class="nav-item navHover">
-          <a href="/" class="nav-link router-link-exact-active router-link-active" target="_self">
-            <span class="rightTabSpan">Menu 1</span>
-          </a>
-        </li>
-        <span class="submenuTitle">SubMenu Title 2</span>
-        <li class="nav-item navHover">
-          <a href="/" class="nav-link router-link-exact-active router-link-active" target="_self">
-            <span class="rightTabSpan">Menu 2</span>
+          <a href="http://pembaruaniman.com/" class="nav-link router-link-exact-active router-link-active" target="blank">
+            <span class="rightTabSpan">KPIN</span>
           </a>
         </li>
         <li class="nav-item navHover">
-          <a href="/" class="nav-link router-link-exact-active router-link-active" target="_self">
-            <span class="rightTabSpan">Menu 3</span>
-          </a>
-        </li>
-        <span class="submenuTitle">SubMenu Title 3</span>
-        <li class="nav-item navHover">
-          <a href="/" class="nav-link router-link-exact-active router-link-active" target="_self">
-            <span class="rightTabSpan">Menu 4</span>
+          <a href="http://fires.id/" class="nav-link router-link-exact-active router-link-active" target="blank">
+            <span class="rightTabSpan">FIRES</span>
           </a>
         </li>
         <li class="nav-item navHover">
-          <a href="/" class="nav-link router-link-exact-active router-link-active" target="_self">
-            <span class="rightTabSpan">Menu 5</span>
+          <a href="http://spik.stemi.id" class="nav-link router-link-exact-active router-link-active" target="blank">
+            <span class="rightTabSpan">SPIK</span>
+          </a>
+        </li>
+        <li class="nav-item navHover">
+          <a href="http://www.buletinpillar.org" class="nav-link router-link-exact-active router-link-active" target="blank">
+            <span class="rightTabSpan">BULETIN PILLAR</span>
+          </a>
+        </li>
+        <li class="nav-item navHover">
+          <a href="http://www.sttrii.ac.id" class="nav-link router-link-exact-active router-link-active" target="blank">
+            <span class="rightTabSpan">STTRII</span>
+          </a>
+        </li>
+        <li class="nav-item navHover">
+          <a href="http://strij.org" class="nav-link router-link-exact-active router-link-active" target="blank">
+            <span class="rightTabSpan">STTRIJ</span>
+          </a>
+        </li>
+        <li class="nav-item navHover">
+          <a href="http://www.sekolahkristencalvin.org" class="nav-link router-link-exact-active router-link-active" target="blank">
+            <span class="rightTabSpan">SKC</span>
+          </a>
+        </li>
+        <li class="nav-item navHover">
+          <a href="http://www.momentum.or.id" class="nav-link router-link-exact-active router-link-active" target="blank">
+            <span class="rightTabSpan">T.B. MOMENTUM</span>
+          </a>
+        </li>
+        <li class="nav-item navHover">
+          <a href="http://majalahkita.org" class="nav-link router-link-exact-active router-link-active" target="blank">
+            <span class="rightTabSpan">M. KITA</span>
           </a>
         </li>
       </ul>
@@ -246,6 +267,7 @@ function toHome(){
   </div>
   `)
   getBanner()
+  getBulletin()
 }
 
 function toGerakan(){  
@@ -342,4 +364,101 @@ function getBanner() {
       .always(function(){
           console.log("Get Banner Finished")
       })
+}
+
+function getBulletin() {
+  $.ajax({
+      method: "GET",
+      url: `${serverBulletin}/api/getWartaList`
+  })
+      .done(completeBulletins => {
+        const bulletins = completeBulletins.Message
+        $.each(bulletins, function(i){
+          console.log(bulletins)
+            // $('#percobaanWarta').empty()
+          $('#percobaanWarta').append(`
+            <span class="subTitle">${dateFormatter(bulletins[i].EventDate)}</span>
+            <span class="serviceTitle">${bulletins[i].EventName} (${bulletins[i].EventTime} WIB)</span>
+            <span class="serviceSpeaker"><strong>${bulletins[i].Speaker.toUpperCase()}</strong></span>
+            <span class="serviceTitle">Place: ${bulletins[i].Place}</span>
+            <span class="serviceTitle">Note: ${bulletins[i].Note}</span>
+            <br>
+          `)
+        });
+      })
+      .fail(err=> {
+          console.log(err)
+          let bulletins = [
+            {
+              EventTypeName: "Kebaktian",
+              EventName: "kebaktian 1",
+              EventDate: "2020-05-19",
+              EventTime: "15:00",
+              Speaker: "Kentgi",
+              Place: "RMCI",
+              Note: "test Notes"
+            },
+            {
+              EventTypeName: "Kebaktian",
+              EventName: "kebaktian 1",
+              EventDate: "2020-05-19",
+              EventTime: "15:00",
+              Speaker: "Kentgi",
+              Place: "RMCI",
+              Note: "test Notes"
+            }
+          ]
+          $.each(bulletins, function(i){
+            console.log(bulletins)
+            $('#percobaanWarta').append(`
+              <span class="subTitle">${dateFormatter(bulletins[i].EventDate)}</span>
+              <span class="serviceTitle">${bulletins[i].EventName} (${bulletins[i].EventTime} WIB)</span>
+              <span class="serviceSpeaker"><strong>${bulletins[i].Speaker.toUpperCase()}</strong></span>
+              <span class="serviceTitle">Place: ${bulletins[i].Place}</span>
+              <span class="serviceTitle">Note: ${bulletins[i].Note}</span>
+              <br>
+            `)
+          });
+      })
+      .always(function(){
+          console.log("Get Bulletin Finished")
+      })
+}
+
+function dateFormatter(date) {
+  const dateForm = new Date(date).toDateString()
+  var arr = dateForm.split(' ')
+  arr.splice(0,1)
+  switch(arr[0]) {
+    case "January":
+      arr[0] = "Januari"
+      break;
+    case "February":
+      arr[0] = "Februari"
+      break;
+    case "March":
+      arr[0] = "Maret"
+      break;
+    case "May":
+      arr[0] = "Mei"
+      break;
+    case "June":
+      arr[0] = "Juni"
+      break;
+    case "July":
+      arr[0] = "Juli"
+      break;
+    case "August":
+      arr[0] = "Agustus"
+      break;
+    case "October":
+      arr[0] = "Oktober"
+      break;
+    case "December":
+      arr[0] = "Desember"
+      break;
+    default:
+      // default
+  }
+  return `${arr[1]} ${arr[0].toUpperCase()} ${arr[2]}`
 }
