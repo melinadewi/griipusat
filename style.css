@@ -1,26 +1,28 @@
 @font-face {
-	font-family: 'proxima_nova_rgregular';
-	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot');
-	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
-		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.woff') format('woff'),
-		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.ttf') format('truetype'),
-		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'proxima_nova_rgbold';
-	src: url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot');
-	src: url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
-		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.woff') format('woff'),
-		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.ttf') format('truetype'),
-		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.svg#proxima_nova_rgbold') format('svg');
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'Gotham';
+  src: url('fonts/Gotham/GothamBold.eot');
+  src: url('fonts/Gotham/GothamBold.eot?#iefix') format('embedded-opentype'),
+      url('fonts/Gotham/GothamBold.woff2') format('woff2'),
+      url('fonts/Gotham/GothamBold.woff') format('woff'),
+      url('fonts/Gotham/GothamBold.svg#GothamBold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 
+@font-face {
+  font-family: 'Gotham';
+  src: url('fonts/Gotham/Gotham-Light.eot');
+  src: url('fonts/Gotham/Gotham-Light.eot?#iefix') format('embedded-opentype'),
+     url('fonts/Gotham/Gotham-Light.woff') format('woff'),
+     url('fonts/Gotham/Gotham-Light.ttf')  format('truetype'),
+     url('fonts/Gotham/Gotham-Light.svg#svgFontName') format('svg');
+   font-weight: 300;
+   font-style: normal;
+ }
+
 body {
-  font-family: 'proxima_nova_rgregular' !important;
+  font-family: 'Gotham' !important;
 }
 
 p {
@@ -30,6 +32,53 @@ p {
 .btn {
   margin: 0 1vw;
   padding: 0.375rem 1.5rem !important;
+}
+
+nav {
+  background-color: white !important;
+  color: black !important;
+  height: 10vh;
+}
+
+.nav-menu {
+  color: black;
+}
+
+.brand {
+  font-family: 'Gotham';
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.nav-wrapper {
+  /* padding-top: 0;
+  margin-top: 0; */
+  background-color: white;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.collection-item {
+  background-color: #FBE5D6;
+  color: black;
+  line-height: 1.2;
+  padding-top: 0.5vh;
+  padding-bottom: 0.5vh;
+  text-align: center;
+}
+
+#hotline {
+  position: absolute;
+  width: 100vw;
+  height: 2vh;
+  /* font-family: 'gotham'; */
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 10px;
+  display: flex;
+  align-items: center;
+  text-align: center;
 }
 
 #overlay {

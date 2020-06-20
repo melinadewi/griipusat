@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="/assets/logo-black.png">
+  <link href="./style.css" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>GRII Pusat</title>
+</head>
+<body>
+  <div id="hotline" style="position: absolute; height: 47px;">
+    <p>Hotline GRII: Untuk informasi berkaitan dengan ibadah dan aktivitas gereja, jemaat dapat menghubungi - Pdt. Edward 08128670372 - Pnt Husin 0811903320 - Bu Alice 0811877221</p>
+  </div>
+  <div style="width: 100vw; height: 100vh; min-width: 1200px;">
+    <div id="overlay">
+      <a href="/" class="to-home" style="margin-top:0;" target="_self">
+        <img src="./assets/logo-white.png" style="padding-top: 0; height: 11vh; margin-left: 1.5vw;">
+      </a>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top" style=" background-image: linear-gradient(#420000, #720000); height: 15vh; min-width: 1200px;">
+      <div class="collapse navbar-collapse" style="display: flex; justify-content: space-evenly; width:100vw; left:-10vw; min-width: 1200px;">
+        <center>
+          <ul class="navbar-nav mr-auto" style="flex-direction: row;">
+            <li class="nav-item">
+              <a href="/" class="nav-link router-link-exact-active router-link-active to-home" target="_top">
+                <span class="navSpan">Home</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="https://www.grii.org/#cabang" class="nav-link router-link-exact-active router-link-active" target="_blank">
+                <span class="navSpan">Cabang</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/" class="nav-link router-link-exact-active router-link-active disabled" target="_self">
+                <span class="navSpan">Warta</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="http://reformed21.tv" class="nav-link router-link-exact-active router-link-active" target="_blank">
+                <span class="navSpan">Reformed 21</span>
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="navSpan">About Us</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item to-gerakan1" href="/">Gerakan Reformed Injili</a>
+                <a class="dropdown-item" href="/" id="to-pengakuan">Pengakuan Iman</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/" id="to-bebandoa">Beban & Doa</a>
+                <a class="dropdown-item" href="/" id="to-stephen-tong">Pdt. Dr. Stephen Tong</a>
+              </div>
+            </li>
+          </ul>
+        </center>
+      </div>
+    </nav>
+
+    <div id="content">
+      <div id="home" class="home d-flex justify-content-around" style="margin-top: 5vh; height: 80vh;">
+        <div class="leftTab d-flex justify-content" style="width: 25vw; margin-bottom: 20px; flex-direction: column; margin-left: 5vw; margin-right: 2.5vw;">
+          <span class="subTitle">15 SEPTEMBER 2019</span>
+          <span class="serviceTitle">Kebaktian Mandarin (07.30 WIB)</span>
+          <span class="serviceSpeaker"><strong>PDT. DR. STEPHEN TONG</strong></span>
+          <span class="serviceTitle">Kebaktian Indonesia (09.30 WIB)</span>
+          <span class="serviceSpeaker"><strong>PDT. DR. STEPHEN TONG</strong></span>
+          <span class="serviceTitle">English Service (09.30 WIB)</span>
+          <span class="serviceSpeaker"><strong>REV. MICHAEL DENSMOOR</strong></span>
+          <span class="serviceTitle">Kebaktian Sore (16.30 WIB)</span>
+          <span class="serviceSpeaker"><strong>PDT. IVAN KRISTIONO</strong></span>
+          <br>
+        </div>
+        <div style="margin-left: 2.5vw; margin-right: 2.5vw;">
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width:30vw; display: flex; flex-direction: column-reverse;">
+            <ol class="carousel-indicators" id="indicators">
+            </ol>
+            <div class="carousel-inner" id="banners">
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+        <div class="rightTab d-flex justify-content-center" style="width: 25vw; margin-bottom: 20px; margin-left: 2.5vw; margin-right: 5vw;">
+          <ul class="nav" style="flex-direction: column; width:100%;">
+            <span class="submenuTitle">SubMenu Title 1</span>
+            <li class="nav-item navHover">
+              <a href="http://pembaruaniman.com/" class="nav-link router-link-exact-active router-link-active" target="blank">
+                <span class="rightTabSpan">KPIN</span>
+              </a>
+            </li>
+            <li class="nav-item navHover">
+              <a href="http://fires.id/" class="nav-link router-link-exact-active router-link-active" target="blank">
+                <span class="rightTabSpan">FIRES</span>
+              </a>
+            </li>
+            <li class="nav-item navHover">
+              <a href="http://spik.stemi.id" class="nav-link router-link-exact-active router-link-active" target="blank">
+                <span class="rightTabSpan">SPIK</span>
+              </a>
+            </li>
+            <li class="nav-item navHover">
+              <a href="http://www.buletinpillar.org" class="nav-link router-link-exact-active router-link-active" target="blank">
+                <span class="rightTabSpan">BULETIN PILLAR</span>
+              </a>
+            </li>
+            <li class="nav-item navHover">
+              <a href="http://www.sttrii.ac.id" class="nav-link router-link-exact-active router-link-active" target="blank">
+                <span class="rightTabSpan">STTRII</span>
+              </a>
+            </li>
+            <li class="nav-item navHover">
+              <a href="http://strij.org" class="nav-link router-link-exact-active router-link-active" target="blank">
+                <span class="rightTabSpan">STTRIJ</span>
+              </a>
+            </li>
+            <li class="nav-item navHover">
+              <a href="http://www.sekolahkristencalvin.org" class="nav-link router-link-exact-active router-link-active" target="blank">
+                <span class="rightTabSpan">SKC</span>
+              </a>
+            </li>
+            <li class="nav-item navHover">
+              <a href="http://www.momentum.or.id" class="nav-link router-link-exact-active router-link-active" target="blank">
+                <span class="rightTabSpan">T.B. MOMENTUM</span>
+              </a>
+            </li>
+            <li class="nav-item navHover">
+              <a href="http://majalahkita.org" class="nav-link router-link-exact-active router-link-active" target="blank">
+                <span class="rightTabSpan">M. KITA</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src='./main.js'></script>
+</body>
+</html>
