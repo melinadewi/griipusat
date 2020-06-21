@@ -40,10 +40,6 @@ nav {
   height: 10vh;
 }
 
-.nav-menu {
-  color: black;
-}
-
 .brand {
   font-family: 'Gotham';
   font-weight: bold;
@@ -51,11 +47,30 @@ nav {
 }
 
 .nav-wrapper {
-  /* padding-top: 0;
-  margin-top: 0; */
   background-color: white;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+.nav-menu {
+  color: black !important;
+  position: relative;
+  font-size: 1.5vh;
+  top: 50%;
+  transform: translateY(-18%);
+  /* height: 14vh; */
+}
+
+.dropdown-content {
+  top: 5vh !important;
+  width: 12vw !important;
+}
+
+.dropdown-content li a{
+  font-size: 1vh !important;
+  color: black !important;
 }
 
 .collection-item {
@@ -64,20 +79,6 @@ nav {
   line-height: 1.2;
   padding-top: 0.5vh;
   padding-bottom: 0.5vh;
-  text-align: center;
-}
-
-#hotline {
-  position: absolute;
-  width: 100vw;
-  height: 2vh;
-  /* font-family: 'gotham'; */
-  font-style: normal;
-  font-weight: bold;
-  font-size: 10px;
-  line-height: 10px;
-  display: flex;
-  align-items: center;
   text-align: center;
 }
 

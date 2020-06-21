@@ -177,6 +177,9 @@ $(document).ready(function(){
         </div>
       `)
     })
+
+
+    $(".dropdown-trigger").dropdown();
 })
 
 function toHome(){

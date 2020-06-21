@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="icon" href="/assets/logo-black.png">
   <link href="./style.css" type="text/css" rel="stylesheet">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="https://cdn.rawgit.com/mfd/f3d96ec7f0e8f034cc22ea73b3797b59/raw/856f1dbb8d807aabceb80b6d4f94b464df461b3e/gotham.css">
@@ -18,30 +20,35 @@
       - Pdt. Edward 08128670372 - Pnt Husin 0811903320 - Bu Alice 0811877221</p>
     </div>
     <nav style="height: 14vh; box-shadow: none;">
-      <div class="nav-wrapper" style="height: 6vh; display: flex;">
+      <div class="nav-wrapper" style="display: flex;">
         <div style="display: flex; flex-direction: row; position: relative;">
           <div>
             <img src="./assets/logo-black.png" style="height: 10vh; margin-left: 1.5vw; margin-top: 2vh; margin-bottom: 2vh;">
           </div>
           <div>
-            <a href="#!" class="brand" style="color: black; width: 60vw; font-size: 2vh; position: absolute; top: 50%; transform: translateY(10%);">
+            <a href="#!" class="brand" style="color: black; width: 40vw; font-size: 2vh; position: absolute; top: 50%; transform: translateY(-50%);">
               GEREJA REFORMED INJILI INDONESIA
             </a>
           </div>
         </div>
-        <div>
+        <div class="nav-menu">
+          <!-- Dropdown Structure -->
+          <ul id="dropdown1" class="dropdown-content">
+            <li><a href="#!">Gerakan Reformed Injili</a></li>
+            <li><a href="#!">Beban & Doa</a></li>
+            <!-- <li class="divider"></li> -->
+            <li><a href="#!">Pengakuan Iman</a></li>
+            <li><a href="#!">Pdt. Dr. Stephen Tong</a></li>
+          </ul>
           <ul class="right hide-on-med-and-down">
-            <li><a href="sass.html"></a><i class="material-icons nav-menu">search</i></a></li>
-            <li><a href="badges.html"><i class="material-icons nav-menu">view_module</i></a></li>
-            <li><a href="collapsible.html"><i class="material-icons nav-menu">refresh</i></a></li>
-            <li><a href="mobile.html"><i class="material-icons nav-menu">more_vert</i></a></li>
+            <li><a class="dropdown-trigger nav-menu" href="#!" data-target="dropdown1" style="color: black;">Info<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a class="nav-menu" href="#">Cabang</a></li>
+            <li><a class="nav-menu" href="#">Live</a></li>
+            <li><a class="dropdown-trigger nav-menu" href="#!" data-target="dropdown1">Tentang<i class="material-icons right">arrow_drop_down</i></a></li>
           </ul>
         </div>
       </div>
     </nav>
-  <!-- <div id="hotline">
-    <p><b>Hotline GRII</b>: Untuk informasi berkaitan dengan ibadah dan aktivitas gereja, jemaat dapat menghubungi <br>- Pdt. Edward 08128670372 - Pnt Husin 0811903320 - Bu Alice 0811877221</p>
-  </div> -->
   <!-- <div style="width: 100vw; height: 98vh; min-width: 1200px;">
     <div id="overlay">
       <a href="/" class="to-home" style="margin-top:0;" target="_self">
