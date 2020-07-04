@@ -1,4 +1,4 @@
-const serverUrl = 'https://grii-pusat.dev.kentgi.net';
+const serverUrl = 'https://grii-pusat.kentgi.net';
 $(document).ready(function(){
   // $(".owl-carousel").owlCarousel();
   $('.carousel.carousel-slider').carousel({
