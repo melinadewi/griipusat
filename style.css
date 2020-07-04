@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'Gotham';
+  font-family: 'Gotham-Bold';
   src: url('fonts/Gotham/GothamBold.eot');
   src: url('fonts/Gotham/GothamBold.eot?#iefix') format('embedded-opentype'),
       url('fonts/Gotham/GothamBold.woff2') format('woff2'),
@@ -23,6 +23,9 @@
 
 body {
   font-family: 'Gotham' !important;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  min-width: 960px;
 }
 
 p {
@@ -41,7 +44,7 @@ nav {
 }
 
 .brand {
-  font-family: 'Gotham';
+  font-family: 'Gotham-Bold';
   font-weight: bold;
   font-size: 12px;
 }
@@ -57,15 +60,20 @@ nav {
 .nav-menu {
   color: black !important;
   position: relative;
-  font-size: 1.5vh;
-  top: 50%;
-  transform: translateY(-18%);
-  /* height: 14vh; */
+  font-size: 1.67vh;
+  top: 40%;
+  transform: translateY(-10%);
+  border-radius: 18px;
+  height: 4vh;
+  text-align: center;
+  padding-bottom: 5vh;
 }
 
 .dropdown-content {
   top: 5vh !important;
   width: 12vw !important;
+  border-radius: 18px;
+  z-index: 10000;
 }
 
 .dropdown-content li a{
@@ -182,7 +190,7 @@ nav {
   color: #630000 !important;
   background-color: #fff !important;
   border-color: #630000 !important;
-  border-radius: 30px !important;
+  border-radius: 18px !important;
   font-size: 8pt !important;
 }
 
@@ -195,53 +203,42 @@ nav {
   color: #fff !important;
   background-color: #630000 !important;
   border-color: #630000 !important;
-  border-radius: 30px !important;
+  border-radius: 18px !important;
   font-size: 10pt !important;
 }
 
 .subTitle {
- height: 30px;
- color: white;
- background-color: #97040C;
- padding-top: 0.3vh;
- border-top: solid 2px #97040C;
- border-bottom: solid 1px #97040C;
- border-right: solid 1px #97040C;
- border-left: solid 1px #97040C;
- -moz-border-radius: 30px;
- -webkit-border-radius: 30px;
- border-radius: 6px;
- vertical-align: middle;
- font-size: 14px;
- text-align: center;
- font-weight: 1000;
+  font-family: 'Gotham';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.33vh;
+  line-height: 1.67vh;
+  display: flex;
+  align-items: center;
+  color: #565656;
+  padding-bottom: 0.5vh;
+  padding-top: 0.2vh;
 }
 
 .serviceTitle {
-  color: #707070;
-  font-size: 12px;
-  margin-top: 1vh;
-  margin-bottom: 0.5vh;
-  vertical-align: middle;
-  text-align: center;
+  font-family: 'Gotham-Bold';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.67vh;
+  display: flex;
+  align-items: center;
+  color: #6C0202;
+
 }
 
 .serviceSpeaker {
   height: 30px;
-  font-size: 15px;
-  color: #5C5C5C;
-  background-color: #EEEEEE;
-  padding-top: 0.3vh;
-  border-top: solid 2px #EEEEEE;
-  border-bottom: solid 1px #EEEEEE;
-  border-right: solid 1px #EEEEEE;
-  border-left: solid 1px #EEEEEE;
-  -moz-border-radius: 30px;
-  -webkit-border-radius: 30px;
-  border-radius: 6px;
+  font-size: 1.5vh;
+  color: #565656;
   vertical-align: middle;
-  font-size: 14px;
+  font-size: 1.67vh;
   text-align: center;
+  padding-bottom: 5vh;
 }
 
 .submenuTitle {
@@ -254,13 +251,18 @@ nav {
   border-bottom: solid 1px #97040C;
   border-right: solid 1px #97040C;
   border-left: solid 1px #97040C;
-  -moz-border-radius: 30px;
-  -webkit-border-radius: 30px;
-  border-radius: 6px;
+  -moz-border-radius: 18px;
+  -webkit-border-radius: 18px;
+  border-radius: 18px;
   vertical-align: middle;
   font-size: 14px;
   text-align: center;
   font-weight: 800;
+}
+
+#percobaanWarta {
+  width: 22vw;
+  height: 60vh;
 }
 
 .rightTabSpan {
@@ -279,14 +281,20 @@ nav {
   margin: 0 !important;
 }
 
+.card {
+  width: 25vw;
+  border-radius: 18px;
+}
+
 .card-title {
-  font-size: 20pt;
-  margin-bottom: .75rem;
-  margin-top: 64px;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #630000;
-  letter-spacing: 2px;
+  font-family: 'Gotham-Bold';
+  font-weight: bold;
+  font-size: 10vh;
+  padding-bottom: 3vh;
+  line-height: 11px;
+  display: flex;
+  align-items: center;
+  color: #6C0202;
 }
 
 .card-subtitle {
@@ -331,4 +339,57 @@ ul li {
   background-origin: initial;
   background-clip: initial;
   background-color: transparent;
+}
+
+.bottomMenu {
+  padding-top: 5vh;
+  margin-left: 2.5vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-right: 5vw;
+  padding-bottom: 5vh;
+}
+
+.bottomMenu .card {
+  width: 25vw;
+  margin-left: 2.5vw !important;
+  border-radius: 18px;
+}
+
+.bottomMenu .card .card-image img{
+  height: 12.7vw;
+}
+
+.bottomMenu .card .card-content {
+  padding-top: 1.33vh;
+  padding-bottom: 1.33vh;
+}
+
+.bottomMenu .card .card-content p {
+  color: black;
+  font-size: 1.33vh;
+}
+
+.pageFooter{
+  background-color: #6C0202 !important;
+  padding-left: 0 !important;
+}
+
+.footerText {
+  font-family: 'Gotham';
+  font-size: 1.67vh;
+  line-height: 3.34vh;
+}
+
+.footerHead {
+  font-family: 'Gotham-Bold';
+  font-size: 1.67vh;
+}
+
+.footerCopyright {
+  margin-left: 5vw;
+  font-family: 'Gotham';
+  font-size: 1vh;
+  color: white;
 }

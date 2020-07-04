@@ -1,5 +1,10 @@
 const serverUrl = 'https://grii-pusat.dev.kentgi.net';
 $(document).ready(function(){
+  // $(".owl-carousel").owlCarousel();
+  $('.carousel.carousel-slider').carousel({
+    fullWidth: true,
+    indicators: true
+  });
   toHome()
     $('.to-home').on('click', function(event){
       event.preventDefault()
@@ -180,6 +185,7 @@ $(document).ready(function(){
 
 
     $(".dropdown-trigger").dropdown();
+    $('.carousel').carousel();
 })
 
 function toHome(){
@@ -377,13 +383,10 @@ function getBulletin() {
         const bulletins = completeBulletins.Message
         $.each(bulletins, function(i){
           console.log(bulletins)
-            // $('#percobaanWarta').empty()
           $('#percobaanWarta').append(`
-            <span class="subTitle">${dateFormatter(bulletins[i].EventDate)}</span>
-            <span class="serviceTitle">${bulletins[i].EventName} (${bulletins[i].EventTime} WIB)</span>
+            <span class="serviceTitle">${bulletins[i].EventName}</span>
+            <span class="subTitle">${dateFormatter(bulletins[i].EventDate)} ${bulletins[i].EventTime} WIB</span>
             <span class="serviceSpeaker"><strong>${bulletins[i].Speaker.toUpperCase()}</strong></span>
-            <span class="serviceTitle">Place: ${bulletins[i].Place}</span>
-            <span class="serviceTitle">Note: ${bulletins[i].Note}</span>
             <br>
           `)
         });
@@ -393,19 +396,19 @@ function getBulletin() {
           let bulletins = [
             {
               EventTypeName: "Kebaktian",
-              EventName: "kebaktian 1",
+              EventName: "Kebaktian Umum 1 (中文 - Bahasa)",
               EventDate: "2020-05-19",
               EventTime: "15:00",
-              Speaker: "Kentgi",
+              Speaker: "PDT. DR. STEPHEN TONG",
               Place: "RMCI",
               Note: "test Notes"
             },
             {
               EventTypeName: "Kebaktian",
-              EventName: "kebaktian 1",
+              EventName: "Kebaktian Umum 2 (Bahasa)",
               EventDate: "2020-05-19",
               EventTime: "15:00",
-              Speaker: "Kentgi",
+              Speaker: "PDT. DR. STEPHEN TONG",
               Place: "RMCI",
               Note: "test Notes"
             }
@@ -413,11 +416,9 @@ function getBulletin() {
           $.each(bulletins, function(i){
             console.log(bulletins)
             $('#percobaanWarta').append(`
-              <span class="subTitle">${dateFormatter(bulletins[i].EventDate)}</span>
-              <span class="serviceTitle">${bulletins[i].EventName} (${bulletins[i].EventTime} WIB)</span>
+              <span class="serviceTitle">${bulletins[i].EventName}</span>
+              <span class="subTitle">${dateFormatter(bulletins[i].EventDate)} ${bulletins[i].EventTime} WIB</span>
               <span class="serviceSpeaker"><strong>${bulletins[i].Speaker.toUpperCase()}</strong></span>
-              <span class="serviceTitle">Place: ${bulletins[i].Place}</span>
-              <span class="serviceTitle">Note: ${bulletins[i].Note}</span>
               <br>
             `)
           });
@@ -462,5 +463,5 @@ function dateFormatter(date) {
     default:
       // default
   }
-  return `${arr[1]} ${arr[0].toUpperCase()} ${arr[2]}`
+  return `${arr[1]} ${arr[0]} ${arr[2]}`
 }
